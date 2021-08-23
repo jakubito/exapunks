@@ -1,0 +1,39 @@
+<img src="histogram.png" width="400" />
+
+---
+
+**XA**
+
+```
+LINK 800
+
+MARK LOOP
+COPY #NERV X
+
+TEST X < -120
+FJMP MAX
+COPY -120 X
+
+MARK MAX
+TEST X > 50
+FJMP SEND
+COPY 50 X
+
+MARK SEND
+COPY X M
+JUMP LOOP
+```
+
+**XB**
+
+```
+LINK 800
+
+@REP 4
+LINK 1
+@END
+
+MARK LOOP
+COPY M #NERV
+JUMP LOOP
+```

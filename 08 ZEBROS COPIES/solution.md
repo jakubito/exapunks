@@ -1,0 +1,41 @@
+<img src="histogram.png" width="400" />
+
+---
+
+**XA**
+
+```
+LINK 800
+LINK 801
+COPY #DATE X
+
+LINK -1
+GRAB 201
+SEEK 9999
+
+COPY X F
+COPY M F
+COPY M F
+COPY M F
+```
+
+**XB**
+
+```
+GRAB 300
+COPY F X
+DROP
+
+LINK 800
+GRAB 200
+COPY X M
+
+MARK LOOP
+TEST F = X
+FJMP LOOP
+COPY F M
+COPY F M
+SEEK -2
+COPY 0 F
+COPY 0 F
+```
