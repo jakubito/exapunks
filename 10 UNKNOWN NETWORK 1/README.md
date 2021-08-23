@@ -1,0 +1,28 @@
+<img src="histogram.png" width="400" />
+
+---
+
+**XA**
+
+```
+COPY 4 T
+
+MARK START
+FJMP STEAL
+SUBI T 1 T
+
+REPL CLONE
+LINK 800
+JUMP START
+
+MARK CLONE
+LINK 801
+JUMP START
+
+MARK STEAL
+KILL
+GRAB 276
+@REP 4
+LINK -1
+@END
+```
