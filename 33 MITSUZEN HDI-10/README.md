@@ -1,0 +1,51 @@
+<img src="histogram.png" width="400" />
+
+---
+
+**XA**
+
+```
+LINK 800
+
+REPL WORKER
+LINK -3
+REPL WORKER
+LINK -3
+
+MARK WORKER
+REPL CLONE
+JUMP SEND
+
+MARK CLONE
+LINK 1
+REPL CLONE
+
+MARK SEND
+TEST #NERV > -55
+MULI T 5 M
+
+@REP 8
+NOOP
+@END
+
+JUMP SEND
+```
+
+**XB**
+
+```
+NOOP
+LINK 800
+LINK 1
+LINK 3
+
+MARK PROCESS
+COPY -75 X
+
+@REP 9
+ADDI X M X
+@END
+
+COPY X #NERV
+JUMP PROCESS
+```
